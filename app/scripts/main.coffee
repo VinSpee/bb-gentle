@@ -3,21 +3,20 @@ require.config
 		jquery: '../components/jquery/jquery'
 		underscore: '../components/underscore/underscore'
 		backbone: '../components/backbone/backbone'
+		marionette: '../components/backbone.marionette/lib/backbone.marionette'
 		text: '../components/requirejs-text/text'
 	shim:
+		marionette:
+			deps: ['underscore', 'jquery', 'backbone']
+			exports: 'Marionette'
 		backbone:
 			deps: ['underscore', 'jquery']
 			exports: 'Backbone'
 		underscore:
 			exports: '_'
+			init: ->
+				@_.templateSettings =
+					interpolate : /\{\{(.+?)\}\}/g
 
-require ['backbone', 'text!templates/doodoo.html'], (Backbone, doodoo) ->
-
-	console.log "utils loaded: %o", utils = underscore:  _.VERSION, jQuery: $().jquery, Backbone: Backbone.VERSION
-
-	_.templateSettings =
-		interpolate : /\{\{(.+?)\}\}/g
-
-	$ ->
-		temper = _.template(doodoo)
-		$("h1").html(temper(name: "Test"))
+require ['marionette', 'app'], (Marionette, App) ->
+	do App.start

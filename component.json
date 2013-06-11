@@ -1,13 +1,14 @@
 {
-	"name": "grunty",
-	"version": "0.0.0",
-	"dependencies": {
-		"requirejs": "~2.1.4",
-		"requirejs-text": "~2.0.5",
-		"modernizr": "~2.6.2",
-		"jquery": "~1.9.1",
-		"underscore": "~1.4.4",
-		"backbone": "~1.0"
-	},
-	"devDependencies": {}
+  "name": "grunty",
+  "version": "0.0.0",
+  "dependencies": {
+    "requirejs": "~2.1.6",
+    "requirejs-text": "~2.0.6",
+    "modernizr": "~2.6.2",
+    "jquery": "~1.9.1",
+    "underscore": "~1.4.4",
+    "backbone": "~1.0",
+    "backbone.marionette": "~1.0.3"
+  },
+  "devDependencies": {}
 }
